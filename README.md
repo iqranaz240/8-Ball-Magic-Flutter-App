@@ -1,4 +1,4 @@
-#8 Ball Magic Flutter App
+# 8 Ball Magic Flutter App
 
 A new Flutter application.
 
