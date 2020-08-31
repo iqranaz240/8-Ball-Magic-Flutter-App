@@ -2,30 +2,18 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 void main() {
-  return runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: BallPage1(),
-    );
-  }
-}
-
-class BallPage1 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+  return runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         title: Text('Ask me anything?'),
         backgroundColor: Colors.blue,
       ),
       body: BallPage(),
-    );
-  }
+      ),
+      ),
+  );
 }
 
 class BallPage extends StatefulWidget {
@@ -36,11 +24,6 @@ class BallPage extends StatefulWidget {
 class _BallPageState extends State<BallPage> {
   int _counter = 0;
   
-  void _incrementCounter() {
-    setState(() {
-      _counter = Random().nextInt(4) + 1 ;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +32,22 @@ class _BallPageState extends State<BallPage> {
         children: <Widget>[
         Expanded(
           child: FlatButton(
-            child: Image.asset('images/ball$_counter.png'),
+            child: Image.asset(
+              'images/ball$_counter.jpg',
+              ),
             onPressed: () {
               _incrementCounter();
-                            },
+                          },
+            ),
           ),
-        ),]
+        ], 
       ),
     );
+  }
+  void _incrementCounter() {
+    setState(() {
+      _counter = Random().nextInt(4) + 1 ;
+      print('push $_counter times.');
+    });
   }
 }
